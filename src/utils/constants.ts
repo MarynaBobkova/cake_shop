@@ -1,7 +1,7 @@
 
 import exp from 'constants';
 
-import tort1 from '../images/tort1.png';
+import tort1 from 'C:\Users\ania0\cake_shop\src\images\tort1.jpg';
 import tort2 from '../images/tort2.png';
 import tort3 from '../images/tort3.jpg';
 import tort4 from '../images/tort4.jpg';
