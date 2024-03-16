@@ -1,5 +1,14 @@
 
+import exp from 'constants';
 
+import tort1 from '../images/tort1.png';
+import tort2 from '../images/tort2.png';
+import tort3 from '../images/tort3.jpg';
+import tort4 from '../images/tort4.jpg';
+import tort5 from '../images/tort5.jpg';
+import tort6 from '../images/tort6.jpg';
+import tort7 from '../images/tort7.jpg';
+import tort8 from '../images/tort8.jpg';
 
 
 
@@ -10,8 +19,8 @@ export const navItems: {item: string, path: string}[] = [
     { item: "Contacts", path: "/contacts" }, 
     { item: "Basket", path: "/basket" }, 
   ]; 
-//export const friends = [ 
- //   friend1, friend2, friend3, friend4, friend5, friend6, friend7, friend8, friend9 
-//]; 
+export const tortes = [ 
+   tort1, tort2, tort3, tort4, tort5, tort6, tort7, tort8
+]; 
  
 export const month = 1000*60*60*24*30;

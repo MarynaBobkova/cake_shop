@@ -1,16 +1,40 @@
 import React from "react";
 import Navigation from "./Navigation";
 
-interface IProps {
-  changePage: (newValue: string) => void 
+interface HeaderProps {
+  onPageChange: (newPage: string) => void;
 }
 
-const Header: React.FC<IProps> = ({ changePage }) => {
+const Header: React.FC<HeaderProps> = ({ onPageChange }) => {
   return (
-      <header>
-        <Navigation changePage={changePage} />
-        <h1 className="text-center">British bakeries</h1>
-      </header>
+    <header>
+       
+      <Navigation onPageChange={onPageChange} />
+      <h1 className='text-center'>British Bakery</h1>
+    </header>
+    
+  //    <header>
+  //    <h1>British Bakery</h1>
+  //    <nav>
+  //      <ul>
+  //        <li>
+  //          <Link to="/" onClick={() => onPageChange('/')}>Home</Link>
+  //        </li>
+  //        <li>
+  //          <Link to="/about" onClick={() => onPageChange('/about')}>About us</Link>
+  //        </li>
+  //        <li>
+  //          <Link to="/delivery" onClick={() => onPageChange('/delivery')}>Delivery</Link>
+  //        </li>
+  //        <li>
+  //          <Link to="/contacts" onClick={() => onPageChange('/contacts')}>Contacts</Link>
+  //        </li>
+  //        <li>
+  //          <Link to="/basket" onClick={() => onPageChange('/basket')}>Basket</Link>
+  //        </li>
+  //      </ul>
+  //    </nav>
+  //  </header>
   );
 };
 

@@ -2,16 +2,21 @@ import React from "react";
 import NavItem from "./NavItem";
 import { navItems } from "../../utils/constants";
 
-interface IProps {
-  changePage: (newValue: string) => void;
+interface NavProps {
+  onPageChange: (newPage: string) => void;
 }
 
-const Navigation: React.FC<IProps> = ({ changePage }) => {
+const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
   return (
-    <nav className="fixed-top mt-2 ms-4">
-      <ul className="nav">
-        {navItems.map((item, index) => (
-          <NavItem key={index} item={item} changePage={changePage} />
+    <nav className='fixed-top mt-2 ms-4'>
+      <ul className='nav'>
+        {navItems.map((e, index) => (
+          <NavItem
+            key={index}
+            item={e.item}
+            path={e.path}  
+            onClick={() => onPageChange(e.path)}
+          />
         ))}
       </ul>
     </nav>
