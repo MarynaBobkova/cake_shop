@@ -1,3 +1,8 @@
+
+
+
+
+
 export const navItems: {item: string, path: string}[] = [ 
     { item: "Home", path: "/" }, 
     { item: "About us", path: "/about" }, 
