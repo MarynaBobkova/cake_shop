@@ -1,6 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
-import { navItems } from "../../utils/constants";
+import { navItemsR } from "../../utils/constants";
+import { navItemsL } from "../../utils/constants";
 
 interface NavProps {
   onPageChange: (newPage: string) => void;
@@ -8,9 +9,19 @@ interface NavProps {
 
 const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
   return (
-    <nav className='fixed-top mt-2 ms-4'>
-      <ul className='nav'>
-        {navItems.map((e, index) => (
+    <nav>
+      <ul className='buttonsRight-class'>
+        {navItemsL.map((e, index) => (
+          <NavItem
+            key={index}
+            item={e.item}
+            path={e.path}  
+            onClick={() => onPageChange(e.path)}
+          />
+        ))}
+      </ul>
+      <ul className='buttonsLeft-class'>
+        {navItemsR.map((e, index) => (
           <NavItem
             key={index}
             item={e.item}

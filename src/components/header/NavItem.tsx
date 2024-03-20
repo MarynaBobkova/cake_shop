@@ -10,7 +10,8 @@ interface NavItemProps {
 
 const NavItem: React.FC<NavItemProps> = ({ item, path, onClick }) => {
   return (
-    <Link to={path} className="nav-item btn btn-danger" onClick={onClick} >
+    
+    <Link to={path} className="btn button" onClick={onClick} >
       {item}
     </Link>
   );

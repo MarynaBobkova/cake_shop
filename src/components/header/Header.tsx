@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ onPageChange }) => {
     <header>
        
       <Navigation onPageChange={onPageChange} />
-      <h1 className='text-center'>British Bakery</h1>
+      <h1 className='text-center header' >British Bakery</h1>
     </header>
     
   //    <header>

@@ -12,14 +12,22 @@ import tort8 from '../images/tort8.jpg';
 
 
 
-export const navItems: {item: string, path: string}[] = [ 
+export const navItemsL: {item: string, path: string}[] = [ 
     { item: "Home", path: "/" },     
     { item: "Delivery", path: "/delivery" }, 
     { item: "About us", path: "/about" }, 
-    { item: "Contacts", path: "/contacts" }, 
+    { item: "Contacts", path: "/contacts" },  
+  ]; 
+
+  export const navItemsR: {item: string, path: string}[] = [     
     { item: "Basket", path: "/basket" }, 
     { item: "Log in", path: "/logIn" }, 
   ]; 
+
+
+
+
+
 export const tortes = [ 
    tort1, tort2, tort3, tort4, tort5, tort6, tort7, tort8
 ]; 
