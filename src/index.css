@@ -8,7 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./images/FON.jpg);
+  background-image: url(./images/myFone2.jpg);
 }
 
 code {
@@ -36,5 +36,19 @@ code {
   font-family:"Bonheur Royale";
   font-size: 150px;
   margin-top: 35px;
-  color: #071d5f;
+  color: hsl(276, 87%, 57%);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa; 
+  padding: 20px; 
+  box-sizing: border-box; /*  padding в ширине*/
+}
+.card-img-top {
+  height: 400px; /*высотa для изображений */
+  object-fit: cover; /* Устанавливает режим заполнения изображения, чтобы оно полностью заполняло контейнер */
 }

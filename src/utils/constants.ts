@@ -29,7 +29,7 @@ export const navItemsL: {item: string, path: string}[] = [
 
 
 export const tortes = [ 
-   tort1, tort2, tort3, tort4, tort5, tort6, tort7, tort8
+   tort1, tort2, tort3, tort4, tort5, tort6, tort7, tort8, tort8
 ]; 
  
 export const month = 1000*60*60*24*30;
