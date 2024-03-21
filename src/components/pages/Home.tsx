@@ -1,304 +1,74 @@
 import React from 'react';
 import {tortes} from '../../utils/constants';
+import {titles} from '../../utils/constants';
+import {descriptions} from '../../utils/constants';
 
+import  { useState } from 'react';
+
+
+const ProductCard = ({ torte, title, description }: { torte: string, title: string, description: string }) => {
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [showQuantitySelector, setShowQuantitySelector] = useState(false);
+
+  const handleIncrement = () => {
+    setSelectedQuantity(selectedQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (selectedQuantity > 1) {
+      setSelectedQuantity(selectedQuantity - 1);
+    }
+  };
+
+  const handleAddToCart = () => {
+    setSelectedQuantity(1);
+    setShowQuantitySelector(true);
+  };
+
+  const handleConfirmQuantity = () => {
+    
+    // Здесь будет логика добавления товара в корзину
+    // например, вызвать функцию, которая добавляет товар в корзину и передать ей количество selectedQuantity
+    console.log(`Добавлено в корзину: ${selectedQuantity} PC.`);
+    setShowQuantitySelector(false);
+  };
+
+  return (
+    <div className="col">
+      <div className="card h-100">
+        <img src={torte} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">{description}</p>
+          {!showQuantitySelector ? (
+            <button className="btn btn-info" onClick={handleAddToCart}>Add to Basket</button>
+          ) : (
+            <div className="d-flex align-items-center">
+              <button className="btn btn-light me-2" onClick={handleDecrement}>-</button>
+              <span>{selectedQuantity} PC.</span>
+              <button className="btn btn-light ms-2" onClick={handleIncrement}>+</button>
+              <button className="btn btn-info ms-2" onClick={handleConfirmQuantity}>Add to Basket</button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Home: React.FC = () => {
   return (
-    <>
-    <div>
-      <h1 className="display-5 text-center ">Decorate your holiday with sweet happiness!</h1>
-    </div>
-
-    <div className="row row-cols-1 row-cols-md-5 g-4">
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[0]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[1]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a short card.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[7]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[4]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[5]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-      </div><br />
-      <div className="row row-cols-1 row-cols-md-5 g-4">
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[6]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[3]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a short card.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[2]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[4]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[5]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-      </div>
+    <div className='cards'>
       <div>
-      
-    </div>
-    <div className="row row-cols-1 row-cols-md-5 g-4">
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[0]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[1]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a short card.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[7]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[4]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[5]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-      </div><br />
-      <div className="row row-cols-1 row-cols-md-5 g-4">
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[6]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[3]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a short card.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[2]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[4]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[5]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
+      <h1 className="display-5 text-center header1">Our Products <br/>Decorate your holiday with sweet happiness!</h1>
       </div>
-      <div>
-      
-    </div>
 
-    <div className="row row-cols-1 row-cols-md-5 g-4">
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[0]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[1]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a short card.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[7]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[4]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[5]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-      </div><br />
-      <div className="row row-cols-1 row-cols-md-5 g-4">
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[6]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[3]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a short card.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[2]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-              </div>
-           </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[4]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
-        <div className="col">
-          <div className="card h-100">
-            <img src={tortes[5]} className="card-img-top" alt="..."/>
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-        </div>
+      <div className="row row-cols-1 row-cols-md-4 g-3">
+        {tortes.map((torte, index) => (
+          <ProductCard key={index} torte={tortes[index]} title={titles[index]} description={descriptions[index]} />
+        ))}
       </div>
-      </>
+    </div>
   );
 };
 

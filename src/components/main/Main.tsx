@@ -6,6 +6,8 @@ import Delivery from "../pages/Delivery";
 import Contacts from "../pages/Contacts";
 import Basket from "../pages/Basket";
 import LogIn from "../pages/LogIn";
+import Fillings from "../pages/Fillings";
+import Reviews from "../pages/Reviews";
 
 
 interface MyProps {
@@ -21,6 +23,8 @@ const Main: React.FC<MyProps> = ({ page }) => {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/logIn" element={<LogIn />} />
+        <Route path="/fillings" element={<Fillings />} />
+        <Route path="/reviews" element={<Reviews />} />
       </Routes>
   )
   // switch (page) {
