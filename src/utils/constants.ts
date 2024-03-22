@@ -1,5 +1,5 @@
 
-import exp from 'constants';
+
 
 import tort0 from '../images/tort0.jpg';
 import tort1 from '../images/tort1.jpg';
@@ -73,6 +73,7 @@ export const tortes = [
   "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:..."];
 
   export const fillings = ["Cake filling 1", "Cake filling 2", "Cake filling 3", "Cake filling 4", "Cake filling 5", "Cake filling 6"];
+
   export const fillingDescriptions = ["Description...", "Description...", "Description...", "Description...", "Description...", "Description..."];
   
   export const toppings = [ 

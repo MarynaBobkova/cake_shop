@@ -59,7 +59,7 @@ const ProductCard = ({ torte, title, description }: { torte: string, title: stri
 
 const Home: React.FC = () => {
   return (
-    <div className='cards'>
+    <div style={{width:"60%", margin:"0 auto"}}>
       <div>
       <h1 className="display-5 text-center header1">Our Products: Decorate your holiday with sweet happiness!</h1>
       </div>
