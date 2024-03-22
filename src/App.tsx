@@ -17,7 +17,8 @@ function App() {
   };
 
   return (
-    <div className='container-fluid'>
+      
+    <div className='container-fluid'>     
       <Header onPageChange={handlePageChange} />
       <Main page={page} />
       <Footer />

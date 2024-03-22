@@ -33,6 +33,12 @@ import tort28 from '../images/tort28.jpg';
 import tort29 from '../images/tort29.jpg';
 import tort30 from '../images/tort30.jpg';
 import tort31 from '../images/tort31.jpg';
+import topping1 from '../images/topping1.jpg';
+import topping2 from '../images/topping2.jpg';
+import topping3 from '../images/topping3.jpg';
+import topping4 from '../images/topping4.jpg';
+import topping5 from '../images/topping5.jpg';
+import topping0 from '../images/topping0.jpg';
 
 
 
@@ -65,5 +71,12 @@ export const tortes = [
   "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
   "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
   "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:..."];
+
+  export const fillings = ["Cake filling 1", "Cake filling 2", "Cake filling 3", "Cake filling 4", "Cake filling 5", "Cake filling 6"];
+  export const fillingDescriptions = ["Description...", "Description...", "Description...", "Description...", "Description...", "Description..."];
+  
+  export const toppings = [ 
+    topping0, topping1, topping2, topping3, topping4, topping5
+  ];
 
   export const month = 1000*60*60*24*30;
