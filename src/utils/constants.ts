@@ -58,12 +58,12 @@ export const tortes = [
 
   export const titles = ["Cake 1", "Cake 2", "Cake 3", "Cake 4", "Cake 5", "Cake 6", "Cake 7", "Cake 8", "Cake 9", 
   "Cake 10", "Cake 11", "Cake 12", "Cake 13", "Cake 14", "Cake 15", "Cake 16", "Cake 17", "Cake 18", "Cake 19", 
-  "Cake 20", "Cake 21", "Cake 22", "Cake 23", "Cake 24", "Cake 25", "Cake 26", "Cake 27", "Cake 28", "Cake 29", "Cake 30", "Cake 31"];
+  "Cake 20", "Cake 21", "Cake 22", "Cake 23", "Cake 24", "Cake 25", "Cake 26", "Cake 27", "Cake 28", "Cake 29", "Cake 30", "Cake 31", "Cake 32"];
 
   export const descriptions = ["Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
   "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
   "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
   "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
-  "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:..."];
+  "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:..."];
 
   export const month = 1000*60*60*24*30;

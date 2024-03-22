@@ -29,6 +29,7 @@ const ProductCard = ({ torte, title, description }: { torte: string, title: stri
     
     // Здесь будет логика добавления товара в корзину
     // например, вызвать функцию, которая добавляет товар в корзину и передать ей количество selectedQuantity
+
     console.log(`Добавлено в корзину: ${selectedQuantity} PC.`);
     setShowQuantitySelector(false);
   };
@@ -60,7 +61,7 @@ const Home: React.FC = () => {
   return (
     <div className='cards'>
       <div>
-      <h1 className="display-5 text-center header1">Our Products <br/>Decorate your holiday with sweet happiness!</h1>
+      <h1 className="display-5 text-center header1">Our Products: Decorate your holiday with sweet happiness!</h1>
       </div>
 
       <div className="row row-cols-1 row-cols-md-4 g-3">
