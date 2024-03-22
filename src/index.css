@@ -64,8 +64,15 @@ footer {
   height: 400px; /*высотa для изображений */
   /* //object-fit: cover; Устанавливает режим заполнения изображения, чтобы оно полностью заполняло контейнер */
   object-fit:cover; 
-  padding: 15px;
- 
+  padding: 15px; 
 }
 
-
+.nav-item {
+  display: flex; /* Используем flexbox для выравнивания элементов */
+  align-items: center; /* Выравнивание по вертикали */
+ 
+}
+.phone-wrapper{
+  margin-right: 80px;
+  font-size:23px;
+}

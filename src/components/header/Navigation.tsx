@@ -20,7 +20,12 @@ const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
           />
         ))}
       </ul>
+      
       <ul className='buttonsLeft-class'>
+      <li className='nav-item'>
+      <div className="phone-wrapper">
+            +4415111019999
+          </div>
         {navItemsR.map((e, index) => (
           <NavItem
             key={index}
@@ -29,6 +34,7 @@ const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
             onClick={() => onPageChange(e.path)}
           />
         ))}
+        </li>
       </ul>
     </nav>
   );
