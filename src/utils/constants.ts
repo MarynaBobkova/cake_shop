@@ -1,6 +1,4 @@
 
-import exp from 'constants';
-
 import tort0 from '../images/tort0.jpg';
 import tort1 from '../images/tort1.jpg';
 import tort2 from '../images/tort2.jpg';
