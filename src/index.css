@@ -62,13 +62,17 @@ footer {
 }
 .card-img-top {
   height: 400px; /*высотa для изображений */
-  object-fit: cover; /* Устанавливает режим заполнения изображения, чтобы оно полностью заполняло контейнер */
-margin-top: 8px;
-
+  /* //object-fit: cover; Устанавливает режим заполнения изображения, чтобы оно полностью заполняло контейнер */
+  object-fit:cover; 
+  padding: 15px; 
 }
 
-.cards{
-  width: 70%;
-  margin: 0 auto;
+.nav-item {
+  display: flex; /* Используем flexbox для выравнивания элементов */
+  align-items: center; /* Выравнивание по вертикали */
+ 
 }
-
+.phone-wrapper{
+  margin-right: 80px;
+  font-size:23px;
+}

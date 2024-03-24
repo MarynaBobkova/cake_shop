@@ -1,74 +1,68 @@
-import React from 'react';
-import {tortes} from '../../utils/constants';
-import {titles} from '../../utils/constants';
-import {descriptions} from '../../utils/constants';
+import React, { useState } from "react";
+import {
+  tortes,
+  titles,
+  descriptions,
+  productsPrice,
+} from "../../utils/constants";
+import Basket from "./Basket";
+import ProductCard from "../main/ProductCard";
 
-import  { useState } from 'react';
 
+interface HomeProps {
+  selectedProducts: { title: string; quantity: number }[];
+  removeFromCart: (index: number) => void;
+}
 
-const ProductCard = ({ torte, title, description }: { torte: string, title: string, description: string }) => {
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
-  const [showQuantitySelector, setShowQuantitySelector] = useState(false);
+export const Home: React.FC<HomeProps> = ({ selectedProducts, removeFromCart }) => {
 
-  const handleIncrement = () => {
-    setSelectedQuantity(selectedQuantity + 1);
-  };
+  const[selectedProduct, setSelectedProducts] = useState<
+    { title: string; quantity: number }[]
+  >(selectedProducts);
 
-  const handleDecrement = () => {
-    if (selectedQuantity > 1) {
-      setSelectedQuantity(selectedQuantity - 1);
+  const addToCart = (title: string, quantity: number) => {
+    const existingProductIndex = selectedProducts.findIndex(
+      (product) => product.title === title
+    );
+
+    if (existingProductIndex !== -1) {
+      const updatedProducts = [...selectedProducts];
+      updatedProducts[existingProductIndex].quantity += quantity;
+      setSelectedProducts(updatedProducts);
+    } else {
+      setSelectedProducts([...selectedProducts, { title, quantity }]);
     }
   };
 
-  const handleAddToCart = () => {
-    setSelectedQuantity(1);
-    setShowQuantitySelector(true);
-  };
-
-  const handleConfirmQuantity = () => {
-    
-    // Здесь будет логика добавления товара в корзину
-    // например, вызвать функцию, которая добавляет товар в корзину и передать ей количество selectedQuantity
-
-    console.log(`Добавлено в корзину: ${selectedQuantity} PC.`);
-    setShowQuantitySelector(false);
+   removeFromCart = (index: number) => {
+    const updatedProducts = [...selectedProducts];
+    updatedProducts.splice(index, 1);
+    setSelectedProducts(updatedProducts);
   };
 
   return (
-    <div className="col">
-      <div className="card h-100">
-        <img src={torte} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
-          {!showQuantitySelector ? (
-            <button className="btn btn-info" onClick={handleAddToCart}>Add to Basket</button>
-          ) : (
-            <div className="d-flex align-items-center">
-              <button className="btn btn-light me-2" onClick={handleDecrement}>-</button>
-              <span>{selectedQuantity} PC.</span>
-              <button className="btn btn-light ms-2" onClick={handleIncrement}>+</button>
-              <button className="btn btn-info ms-2" onClick={handleConfirmQuantity}>Add to Basket</button>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const Home: React.FC = () => {
-  return (
-    <div className='cards'>
+    <div style={{ width: "60%", margin: "0 auto" }}>
       <div>
-      <h1 className="display-5 text-center header1">Our Products: Decorate your holiday with sweet happiness!</h1>
+        <h1 className="display-5 text-center header1">
+          Our Products: Decorate your holiday with sweet happiness!
+        </h1>
       </div>
-
       <div className="row row-cols-1 row-cols-md-4 g-3">
         {tortes.map((torte, index) => (
-          <ProductCard key={index} torte={tortes[index]} title={titles[index]} description={descriptions[index]} />
+          <ProductCard
+            key={index}
+            torte={tortes[index]}
+            title={titles[index]}
+            description={descriptions[index]}
+            productPrice={productsPrice.get(titles[index]) || 0}
+            addToCart={addToCart}
+          />
         ))}
       </div>
+      <Basket
+        selectedProducts={selectedProducts}
+        removeFromCart={removeFromCart}
+      />
     </div>
   );
 };
