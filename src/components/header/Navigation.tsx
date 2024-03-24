@@ -24,7 +24,7 @@ const Navigation: React.FC<NavProps> = ({ onPageChange }) => {
       <ul className='buttonsLeft-class'>
       <li className='nav-item'>
       <div className="phone-wrapper">
-            +4415111019999
+            +4915111019999
           </div>
         {navItemsR.map((e, index) => (
           <NavItem

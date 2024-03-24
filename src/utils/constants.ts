@@ -1,6 +1,3 @@
-
-
-
 import tort0 from '../images/tort0.jpg';
 import tort1 from '../images/tort1.jpg';
 import tort2 from '../images/tort2.jpg';
@@ -66,14 +63,50 @@ export const tortes = [
   "Cake 10", "Cake 11", "Cake 12", "Cake 13", "Cake 14", "Cake 15", "Cake 16", "Cake 17", "Cake 18", "Cake 19", 
   "Cake 20", "Cake 21", "Cake 22", "Cake 23", "Cake 24", "Cake 25", "Cake 26", "Cake 27", "Cake 28", "Cake 29", "Cake 30", "Cake 31", "Cake 32"];
 
-  export const descriptions = ["Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
-  "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
-  "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
-  "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", 
-  "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:...", "Composition:..."];
+
+  export const descriptions = ["...", "...","...","...","...","...","...","...","...","...","...","...","...","...","...","...","...","...","...",
+  "...","...","...","...","...","...","...","...","...","...","...","...","..."];
 
   export const fillings = ["Cake filling 1", "Cake filling 2", "Cake filling 3", "Cake filling 4", "Cake filling 5", "Cake filling 6"];
 
+  export const productsPrice: Map<string, number> = new Map();
+  productsPrice.set(titles[0], 10);
+  productsPrice.set(titles[1], 10);
+  productsPrice.set(titles[2], 10);
+  productsPrice.set(titles[3], 10);
+  productsPrice.set(titles[4], 10);
+  productsPrice.set(titles[5], 10);
+  productsPrice.set(titles[6], 10);
+  productsPrice.set(titles[7], 10);
+  productsPrice.set(titles[8], 10);
+  productsPrice.set(titles[9], 10);
+  productsPrice.set(titles[10], 10);
+  productsPrice.set(titles[11], 10);
+  productsPrice.set(titles[12], 10);
+  productsPrice.set(titles[13], 10);
+  productsPrice.set(titles[14], 10);
+  productsPrice.set(titles[15], 10);
+  productsPrice.set(titles[16], 10);
+  productsPrice.set(titles[17], 10);
+  productsPrice.set(titles[18], 10);
+  productsPrice.set(titles[19], 10);
+  productsPrice.set(titles[20], 10);
+  productsPrice.set(titles[21], 10);
+  productsPrice.set(titles[22], 10);
+  productsPrice.set(titles[23], 10);
+  productsPrice.set(titles[24], 10);
+  productsPrice.set(titles[25], 10);
+  productsPrice.set(titles[26], 10);
+  productsPrice.set(titles[27], 10);
+  productsPrice.set(titles[28], 10);
+  productsPrice.set(titles[29], 10);
+  productsPrice.set(titles[30], 10);
+  productsPrice.set(titles[31], 10);
+  productsPrice.set(titles[32], 10);
+  
+
+
+  
   export const fillingDescriptions = ["Description...", "Description...", "Description...", "Description...", "Description...", "Description..."];
   
   export const toppings = [ 
