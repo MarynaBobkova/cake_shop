@@ -2,6 +2,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
+    // Обертка для контента страницы, задаем ширину и выравнивание по центру
     <div style={{ width: '65%', margin: '0 auto' }} >
       <h2 className='header1'>About Us:</h2>
       <br/>

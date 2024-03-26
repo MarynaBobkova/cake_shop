@@ -1,53 +1,44 @@
-import React, { useState } from "react";
-import {
-  tortes,
-  titles,
-  descriptions,
-  productsPrice,
-} from "../../utils/constants";
+import React from "react";
+import { tortes, titles, descriptions, productsPrice } from "../../utils/constants";
 import Basket from "./Basket";
 import ProductCard from "../main/ProductCard";
 
-
+// Интерфейс пропсов компонента "Home"
 interface HomeProps {
-  selectedProducts: { title: string; quantity: number }[];
-  removeFromCart: (index: number) => void;
+  productsInCart: { title: string; quantity: number }[]; // Список выбранных продуктов в корзине
+  removeFromCart: (index: number) => void; // Функция для удаления продукта из корзины
 }
 
-export const Home: React.FC<HomeProps> = ({ selectedProducts, removeFromCart }) => {
-
-  const[selectedProduct, setSelectedProducts] = useState<
-    { title: string; quantity: number }[]
-  >(selectedProducts);
-
+// Компонент "Home" представляет собой главную страницу приложения
+const Home: React.FC<HomeProps> = ({ productsInCart, removeFromCart }) => {
+  // Функция добавления продукта в корзину
   const addToCart = (title: string, quantity: number) => {
-    const existingProductIndex = selectedProducts.findIndex(
-      (product) => product.title === title
-    );
-
-    if (existingProductIndex !== -1) {
-      const updatedProducts = [...selectedProducts];
-      updatedProducts[existingProductIndex].quantity += quantity;
+    // Поиск существующего продукта в корзине
+    const existingProduct = productsInCart.find((product) => product.title === title);
+  
+    if (existingProduct) {
+      // Если товар уже есть в корзине, обновляем его количество
+      const updatedProducts = productsInCart.map((product) =>
+        product.title === title ? { ...product, quantity: product.quantity + quantity } : product
+      );
       setSelectedProducts(updatedProducts);
     } else {
-      setSelectedProducts([...selectedProducts, { title, quantity }]);
+      // Если товара нет в корзине, добавляем его
+      setSelectedProducts([...productsInCart, { title, quantity }]);
     }
   };
 
-   removeFromCart = (index: number) => {
-    const updatedProducts = [...selectedProducts];
-    updatedProducts.splice(index, 1);
-    setSelectedProducts(updatedProducts);
-  };
+  // Состояние для списка выбранных продуктов
+  const [selectedProducts, setSelectedProducts] = React.useState(productsInCart);
 
   return (
     <div style={{ width: "60%", margin: "0 auto" }}>
       <div>
-        <h1 className="display-5 text-center header1">
-          Our Products: Decorate your holiday with sweet happiness!
-        </h1>
+        {/* Заголовок страницы */}
+        <h1 className="display-5 text-center header1">Our Products: Decorate your holiday with sweet happiness!</h1>
       </div>
       <div className="row row-cols-1 row-cols-md-4 g-3">
+        {/* Отображение карточек продуктов */}
         {tortes.map((torte, index) => (
           <ProductCard
             key={index}
@@ -59,12 +50,9 @@ export const Home: React.FC<HomeProps> = ({ selectedProducts, removeFromCart }) 
           />
         ))}
       </div>
-      <Basket
-        selectedProducts={selectedProducts}
-        removeFromCart={removeFromCart}
-      />
+      {/* Компонент корзины с передачей выбранных продуктов */}
+      <Basket selectedProducts={selectedProducts} removeFromCart={removeFromCart} />
     </div>
   );
 };
-
 export default Home;
